@@ -19,7 +19,7 @@ p = {
 
 f = function() {
   log('this === global =>', this === global);
-  log('this === o =>', this === o);
+  log('this === p =>', this === p);
   log('global.x =>', global.x);
   log('this.x =>', this.x);
 };

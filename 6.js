@@ -17,7 +17,7 @@ o = {
     x: 2,
     f: function() {
       log('this === global =>', this === global);
-      log('this === o =>', this === o);
+      log('this === o.o =>', this === o.o);
       log('global.x =>', global.x);
       log('this.x =>', this.x);
     },
@@ -25,7 +25,7 @@ o = {
       x: 3,
       f: function() {
         log('this === global =>', this === global);
-        log('this === o =>', this === o);
+        log('this === o.o.o =>', this === o.o.o);
         log('global.x =>', global.x);
         log('this.x =>', this.x);
       },

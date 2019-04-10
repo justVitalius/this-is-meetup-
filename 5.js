@@ -9,9 +9,13 @@ strict mode не влияет`);
 f = function() {
   this.x = 999;
   log('this === global =>', this === global);
+  log('this === o =>', this === o);
   log('global.x =>', global.x);
   log('this.x =>', this.x);
 }
+
+f();
+br();
 
 // в объект передаем по ссылке функцию
 o = {

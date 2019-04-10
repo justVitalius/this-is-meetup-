@@ -9,14 +9,14 @@ Person = function(name) {
   return this;
 }
 
-Person.prototype.workedAt = function(companies) {
+Person.prototype.workedIn = function(companies) {
   return companies.map(function(company) {
-    return `${this.name} worked at ${company}`;
+    return `${this.name} worked in ${company}`;
   })
 }
 
 person = new Person('Vitaly');
-console.log(person.workedAt(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
+console.log(person.workedIn(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
 
 br();
 
@@ -27,36 +27,36 @@ Person = function(name) {
   return this;
 }
 
-Person.prototype.workedAt = function(companies) {
+Person.prototype.workedIn = function(companies) {
   return companies.map( company => {
     return `${this.name} worked at ${company}`;
   })
 }
 
 person = new Person('Vitaly');
-console.log(person.workedAt(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
+console.log(person.workedIn(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
 
 br();
 
 helpers = {
-  workedAt: function(company) {
+  workedIn: function(company) {
     return `${this.name} worked at ${company}`;
   },
-  workedAtArrow: company => {
+  workedInArrow: company => {
     return `${this.name} worked at ${company}`;
   }
 }
 
 title(`Но не забываем, что нельзя использовать this в методах из класса хэлперов`)
 
-Person.prototype.workedAtBase = function(companies) {
-  return companies.map(helpers.workedAt)
+Person.prototype.workedInBase = function(companies) {
+  return companies.map(helpers.workedIn)
 }
 
-Person.prototype.workedAtArrow = function(companies) {
-  return companies.map(helpers.workedAtArrow)
+Person.prototype.workedInArrow = function(companies) {
+  return companies.map(helpers.workedInArrow)
 }
 
 person = new Person('Vitaly');
-console.log(person.workedAtBase(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
-console.log(person.workedAtArrow(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
+console.log(person.workedInBase(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
+console.log(person.workedInArrow(['railscasts', 'zengile', 'ziklon labs', 'sbertech']))
